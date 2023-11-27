@@ -6,7 +6,7 @@ export default {
 
 <template>
     <header>
-        <div class="container-fluid">
+        <div class="container-lg">
             <div class="logo">
                 <img src="../assets/img/yu-gi-oh-logo.png" alt="">
             </div>
@@ -24,9 +24,10 @@ export default {
 header {
     height: $header-heigth;
     background-color: $primary-color;
-    color: $text-primary;
+    color: $text-secondary;
+    border-bottom: 2px solid $text-secondary;
 
-    .container-fluid {
+    .container-lg {
         height: 100%;
         @include flex (row, space-around, center);
 
