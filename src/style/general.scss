@@ -1,0 +1,8 @@
+@use './partials/variables' as *;
+
+@import 'bootstrap/scss/bootstrap.scss';
+@import '@fontsource/prompt';
+
+* {
+    font-family: $primary-font !important;
+}
