@@ -1,8 +1,8 @@
 <script>
-import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import { store } from './store.js';
+import axios from 'axios';
 
 export default {
   components: {
@@ -15,12 +15,14 @@ export default {
     }
   },
   created() {
+    this.store.loading = true;
     axios
-      .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+      .get(this.store.apiLink)
       .then((resp) => {
         // console.log(resp.data.data);
         this.store.cards = resp.data.data;
-        console.log(this.store, this.store.cards);
+        // console.log(this.store, this.store.cards);
+        this.store.loading = false;
       });
   }
 }

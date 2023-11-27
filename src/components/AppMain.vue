@@ -1,9 +1,11 @@
 <script>
-import MainCard from './MainCard.vue';
 import { store } from '../store.js';
+import LoaderMain from './LoaderMain.vue';
+import MainCard from './MainCard.vue';
 
 export default {
     components: {
+        LoaderMain,
         MainCard,
     },
     data () {
@@ -16,7 +18,8 @@ export default {
 
 <template>
     <main class="container-lg">
-        <div class="row justify-content-start align-items-center g-5">
+        <LoaderMain v-if="store.loading" />
+        <div class="row justify-content-start align-items-center g-5" v-else>
             <div class="col-3 p-2" v-for="card in store.cards">
                 <MainCard  :name="card.name" :imagePath="card.card_images[0].image_url" :type="card.type" />
             </div>
