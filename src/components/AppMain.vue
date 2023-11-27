@@ -16,9 +16,9 @@ export default {
 
 <template>
     <main class="container-lg">
-        <div class="row">
-            <div class="col">
-                <MainCard v-for="card in cards" />
+        <div class="row justify-content-start align-items-center g-5">
+            <div class="col-3 p-2" v-for="card in store.cards">
+                <MainCard  :name="card.name" :imagePath="card.card_images[0].image_url" :type="card.type" />
             </div>
         </div>
     </main>
@@ -27,4 +27,5 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
 @use '../style/partials/mixins' as *;
+
 </style>

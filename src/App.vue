@@ -20,7 +20,7 @@ export default {
       .then((resp) => {
         // console.log(resp.data.data);
         this.store.cards = resp.data.data;
-        // console.log(this.store, this.store.cards);
+        console.log(this.store, this.store.cards);
       });
   }
 }
