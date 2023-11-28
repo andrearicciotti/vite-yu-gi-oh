@@ -2,6 +2,7 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppSearch from './components/AppSearch.vue';
+import AppCounter from './components/AppCounter.vue';
 import { store } from './store.js';
 import axios from 'axios';
 
@@ -10,6 +11,7 @@ export default {
     AppHeader,
     AppMain,
     AppSearch,
+    AppCounter,
   },
   data() {
     return {
@@ -54,6 +56,7 @@ export default {
   <AppHeader />
   <AppSearch @search="handleSearch" />
   <AppMain />
+  <AppCounter />
 </template>
 
 <style lang="scss">
