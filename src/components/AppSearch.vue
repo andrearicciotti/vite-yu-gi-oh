@@ -8,8 +8,9 @@ export default {
     },
     methods: {
         getSelected(event) {
-            this.store.searchInput = event.target.value
-            console.log(event.target.value, this.store.searchInput);
+            this.store.searchInput = event.target.value;
+            // console.log(event.target.value, this.store.searchInput);
+            this.$emit('search');
         }
     }
 }
@@ -22,8 +23,8 @@ export default {
             <select @change="getSelected($event)" name="archetype" id="archetype">
                 <option value="">Choose</option>
                 <option value="alien">Alien</option>
-                <option value="allyOfJustice">Ally Of Justice</option>
-                <option value="ancientGear">Ancient Gear</option>
+                <option value="Ally of Justice">Ally Of Justice</option>
+                <option value="Ancient Gear">Ancient Gear</option>
             </select>
         </div>
     </div>
