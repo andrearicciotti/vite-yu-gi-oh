@@ -8,7 +8,7 @@ export default {
         LoaderMain,
         MainCard,
     },
-    data () {
+    data() {
         return {
             store
         }
@@ -21,7 +21,7 @@ export default {
         <LoaderMain v-if="store.loading" />
         <div class="row justify-content-start align-items-center g-5" v-else>
             <div class="col-3 p-2" v-for="card in store.cards">
-                <MainCard  :name="card.name" :imagePath="card.card_images[0].image_url" :type="card.type" />
+                <MainCard :name="card.name" :imagePath="card.card_images[0].image_url" :archetype="card.archetype" />
             </div>
         </div>
     </main>
@@ -30,5 +30,4 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
 @use '../style/partials/mixins' as *;
-
 </style>

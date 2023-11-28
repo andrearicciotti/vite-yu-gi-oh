@@ -1,10 +1,15 @@
 <script>
 export default {
-props: {
-    name: String,
-    imagePath: String,
-    type: String,
-}
+    props: {
+        name: String,
+        imagePath: String,
+        archetype: String,
+    },
+    computed: {
+        getArchetype() {
+            return this.archetype ? this.archetype : 'No archetype for this card';
+        }
+    }
 
 }
 </script>
@@ -13,8 +18,8 @@ props: {
     <div class="card">
 
         <img :src="imagePath" :alt="name">
-        <h5>{{  name  }}</h5>
-        <p>{{  type  }}</p>
+        <h5>{{ name }}</h5>
+        <p>{{ getArchetype }}</p>
 
     </div>
 </template>
@@ -35,18 +40,17 @@ props: {
     }
 
     h5 {
-        font-size: .9rem;
+        font-size: 1rem;
+        text-align: center;
         padding: .5rem .2rem .2rem .2rem;
     }
 
     p {
         text-align: center;
         color: $text-primary;
-        font-size: .7rem;
+        font-size: .9rem;
         border-top: 2px solid $secondary_color;
         margin-bottom: 0 !important;
     }
 }
-
-
 </style>
